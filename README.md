@@ -26,14 +26,15 @@ Maps are downloaded using the [Ethos GPS Map Generator](https://martinovem.githu
 
 > Full documentation and source code for the map generator: [github.com/MartinovEm/Ethos-GPS-Map-Generator](https://github.com/MartinovEm/Ethos-GPS-Map-Generator)
 
-**Important:** When you download a map from the generator, it produces **two files**:
+**Important:** When you download a map from the generator, it produces **three files**:
 
 | File | Location on SD Card | Purpose |
 |---|---|---|
 | `ProjectName.png` | `/bitmaps/GPS/` | The map bitmap |
 | `ProjectName.json` | `/documents/user/` | Corner coordinates (topLat, bottomLat, leftLon, rightLon) |
+| `ProjectName_Zoom_Date_metadata.txt` | `/documents/user/` | Coordinates in DMS, Decimal. **NOT NEEDED** for this Lua |
 
-The JSON file shares the same name as your project title. GPS AccuMap automatically reads the coordinates from this file — **no manual coordinate entry is needed**. This is a key difference from the built-in Ethos GPS Map widget.
+The JSON file shares the same name as your project title. GPS AccuMap automatically reads the coordinates from this file — **no manual coordinate entry is needed**. This is a key difference from the built-in Ethos GPS Map widget, where you must enter the coordinates from `_medatada` file manually.
 
 ## Widget Configuration
 
