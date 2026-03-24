@@ -2,6 +2,9 @@
 
 **GPS AccuMap** is a real-time GPS map widget for FrSky Ethos radios, designed for **line-of-sight (LOS) pilots** who want to see their aircraft's live position on their transmitter screen while flying. It is equally useful for locating a lost or crashed aircraft — the last known position, coordinates, and distance are preserved on screen even after telemetry is lost.
 
+<img width="800" height="480" alt="GPS AccuMap" src="https://github.com/user-attachments/assets/f1f7be41-b9d1-4b82-9fb4-91fd20542197" />
+
+
 ## Sensor Compatibility
 
 GPS AccuMap uses telemetry data from the **FrSky GPS ADV** sensor, as well as any GPS unit compatible with the FrSky ACCESS / ACCST telemetry protocol that provides latitude and longitude fields.
@@ -37,6 +40,9 @@ Maps are downloaded using the [Ethos GPS Map Generator](https://martinovem.githu
 The JSON file shares the same name as your project title. GPS AccuMap automatically reads the coordinates from this file — **no manual coordinate entry is needed**. This is a key difference from the built-in Ethos GPS Map widget, where you must enter the coordinates from `_medatada` file manually.
 
 ## Widget Configuration
+
+<img width="800" height="480" alt="Settings" src="https://github.com/user-attachments/assets/96fe06a4-4a98-4d75-b074-852f5d798cbe" />
+
 
 | Setting | Description |
 |---|---|
