@@ -110,13 +110,19 @@ In both cases, the GPS coordinate mapping remains accurate because the pixel off
 ## File Structure
 
 ```
-GPSAccuMap/
-├── main.lua          -- Widget source code
-├── icons/
-│   ├── home.png      -- Home position marker (17×20 px)
-│   ├── arrow.png     -- White aircraft heading icon
-│   └── arrow_red.png -- Red aircraft icon (signal lost)
-└── README.md
+RADIO:/scripts/GPSAccuMap/
+├── main.lua
+└── icons/
+    ├── home.png
+    ├── arrow.png
+    └── arrow_red.png
+
+RADIO:/bitmaps/GPS/
+└── YourMap.bmp              ← from Map Generator
+
+RADIO:/documents/user/
+├── YourMap.json             ← for GPS AccuMap (auto-loaded)
+└── YourMap_..._metadata.txt ← for built-in widget (manual entry)
 ```
 
 ## Requirements
