@@ -98,6 +98,9 @@ When telemetry signal is lost (no update within the configured Signal Timeout):
 
 This allows you to read the last coordinates and approximate distance to locate the aircraft.
 
+<img width="800" height="480" alt="telem lost" src="https://github.com/user-attachments/assets/f380494d-b74a-4d61-a116-05b92805b3ae" />
+
+
 ## Widget Size Compatibility
 
 GPS AccuMap works with **any widget screen size** on Ethos. The map bitmap is **never stretched or compressed** — it is always rendered at its native pixel resolution.
