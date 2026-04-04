@@ -50,9 +50,12 @@ The JSON file shares the same name as your project title. GPS AccuMap automatica
 | **GPS Source** | Select the GPS sensor from the telemetry sensors list. This is the sensor providing latitude/longitude coordinates. |
 | **Heading Indicator** | Choose **Dot** (filled orange circle) or **Arrow** (rotatable aircraft icon) |
 | **Signal Timeout (s)** | Time in seconds (2–30) before telemetry is considered lost |
+| **Signal Lost Text** | Choose text color for coordinates/distance when GPS signal is lost: **White** (default, best on dark/satellite maps) or **Red** (for light map backgrounds) |
 | **Distance** | Toggle 3D distance-from-home display |
 | **Altitude Source** | Select the altitude sensor (required when Distance is enabled) |
 | **Reset Home** | Manually reset the home position |
+| **Version** | Shows the current widget version |
+| **Diagnostics** | Opens a diagnostics page showing GPS source status, coordinates, JSON metadata, and map bitmap status — useful for troubleshooting |
 
 ## Features
 
@@ -97,9 +100,6 @@ When telemetry signal is lost (no update within the configured Signal Timeout):
 - The **2D ground distance from home** is displayed in the bottom-left corner (always shown on signal loss, regardless of the Distance toggle)
 
 This allows you to read the last coordinates and approximate distance to locate the aircraft.
-
-<img width="800" height="480" alt="telem lost" src="https://github.com/user-attachments/assets/f380494d-b74a-4d61-a116-05b92805b3ae" />
-
 
 ## Widget Size Compatibility
 
