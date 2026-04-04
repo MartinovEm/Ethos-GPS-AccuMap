@@ -41,8 +41,7 @@ The JSON file shares the same name as your project title. GPS AccuMap automatica
 
 ## Widget Configuration
 
-<img width="800" height="480" alt="Settings" src="https://github.com/user-attachments/assets/96fe06a4-4a98-4d75-b074-852f5d798cbe" />
-
+<img width="400" height="240" alt="Settings" src="https://github.com/user-attachments/assets/ed607317-8377-4513-8b29-18246f547592" /> <img width="400" height="240" alt="Settings2" src="https://github.com/user-attachments/assets/dbfecce9-a932-49e6-b1ad-9409b59101cc" />
 
 | Setting | Description |
 |---|---|
@@ -56,6 +55,8 @@ The JSON file shares the same name as your project title. GPS AccuMap automatica
 | **Reset Home** | Manually reset the home position |
 | **Version** | Shows the current widget version |
 | **Diagnostics** | Opens a diagnostics page showing GPS source status, coordinates, JSON metadata, and map bitmap status — useful for troubleshooting |
+
+<img width="400" height="240" alt="Diagnostic" src="https://github.com/user-attachments/assets/50036c37-4f64-4f1c-8996-d4430d9f137a" />
 
 ## Features
 
@@ -100,6 +101,8 @@ When telemetry signal is lost (no update within the configured Signal Timeout):
 - The **2D ground distance from home** is displayed in the bottom-left corner (always shown on signal loss, regardless of the Distance toggle)
 
 This allows you to read the last coordinates and approximate distance to locate the aircraft.
+
+<img width="400" height="240" alt="telem lost" src="https://github.com/user-attachments/assets/eede526a-f5a9-4b40-b7eb-3010923809d7" />
 
 ## Widget Size Compatibility
 
