@@ -84,13 +84,15 @@ $$
 D_{3D} = \sqrt{D_{ground}^2 + h^2}
 $$
 
-where $D_{ground}$ is the haversine great-circle distance and $h$ is the altitude reading. The ground distance itself is calculated using the haversine formula:
+where $D_{ground}$ is the haversine great-circle distance and $h$ is the height above home: the altitude reading minus the altitude recorded when home was set. A sensor that reports altitude above sea level (for example GPS altitude over ELRS) therefore does not inflate the distance. The ground distance itself is calculated using the haversine formula:
 
 $$
 D_{ground} = 2R \cdot \arcsin\left(\sqrt{\sin^2\left(\frac{\Delta\varphi}{2}\right) + \cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta\lambda}{2}\right)}\right)
 $$
 
 with $R = 6{,}371{,}000\,\text{m}$ (Earth's mean radius). A 5 m jitter filter suppresses noise when stationary.
+
+If you switch the altitude sensor's **Auto offset** on or off in Ethos, or choose a different Altitude Source, after home has been set, press **Reset Home**.
 
 ### Telemetry Loss Behavior
 
@@ -118,10 +120,12 @@ In both cases, the GPS coordinate mapping remains accurate because the pixel off
 ```
 RADIO:/scripts/GPSAccuMap/
 ├── main.lua
+├── LICENSE
 └── icons/
     ├── home.png
     ├── arrow.png
-    └── arrow_red.png
+    ├── arrow_red.png
+    └── rotate.png
 
 RADIO:/bitmaps/GPS/
 └── YourMap.bmp              ← from Map Generator
