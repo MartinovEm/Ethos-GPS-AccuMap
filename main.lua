@@ -1,4 +1,4 @@
-local VERSION = "2.0.4"
+local VERSION = "2.0.5"
 local bitmapsPath = "/bitmaps/GPS"
 local metadataDir = "/documents/user"
 
@@ -604,6 +604,13 @@ buildStatsForm = function(widget)
     end)
 end
 
+-- Ethos 26.2 RC5/RC6 creates the field, then raises an error instead of returning it
+local function addSensorField(line, getValue, setValue)
+    local ok, field = pcall(form.addSensorField, line, nil, getValue, setValue)
+    if ok then return field end
+    return nil
+end
+
 buildMainForm = function(widget)
     form.clear()
 
@@ -620,7 +627,7 @@ buildMainForm = function(widget)
         end)
 
     local line2 = form.addLine("GPS Source")
-    form.addSensorField(line2, nil,
+    addSensorField(line2,
         function() return widget.gpsSensor end,
         function(value)
             widget.gpsSensor = value
@@ -663,15 +670,15 @@ buildMainForm = function(widget)
         function() return widget.distEnabled end,
         function(value)
             widget.distEnabled = value
-            altSrcField:enable(value)
-            speedSrcField:enable(value)
+            if altSrcField then altSrcField:enable(value) end
+            if speedSrcField then speedSrcField:enable(value) end
             for ui = 1, 3 do
                 if userSrcFields and userSrcFields[ui] then userSrcFields[ui]:enable(value) end
             end
         end)
 
     local lineAlt = form.addLine("  Altitude Source")
-    altSrcField = form.addSensorField(lineAlt, nil,
+    altSrcField = addSensorField(lineAlt,
         function()
             if not widget.altSrc and widget.altSensorName ~= "" then
                 widget.altSrc = system.getSource({name = widget.altSensorName})
@@ -693,10 +700,10 @@ buildMainForm = function(widget)
                 widget.altSrc = nil
             end
         end)
-    altSrcField:enable(widget.distEnabled)
+    if altSrcField then altSrcField:enable(widget.distEnabled) end
 
     local lineSpd = form.addLine("  Speed Source")
-    speedSrcField = form.addSensorField(lineSpd, nil,
+    speedSrcField = addSensorField(lineSpd,
         function()
             if not widget.speedSrc and widget.speedSensorName ~= "" then
                 widget.speedSrc = system.getSource({name = widget.speedSensorName})
@@ -718,12 +725,12 @@ buildMainForm = function(widget)
                 widget.speedSrc = nil
             end
         end)
-    speedSrcField:enable(widget.distEnabled)
+    if speedSrcField then speedSrcField:enable(widget.distEnabled) end
 
     userSrcFields = {}
     for idx = 1, 3 do
         local lineU = form.addLine("  User Sensor " .. idx)
-        local usf = form.addSensorField(lineU, nil,
+        local usf = addSensorField(lineU,
             function()
                 if not widget.userSrc[idx] and widget.userSensorName[idx] ~= "" then
                     widget.userSrc[idx] = system.getSource({name = widget.userSensorName[idx]})
@@ -749,7 +756,7 @@ buildMainForm = function(widget)
                     prevUserValue[idx] = nil
                 end
             end)
-        usf:enable(widget.distEnabled)
+        if usf then usf:enable(widget.distEnabled) end
         userSrcFields[idx] = usf
     end
 
